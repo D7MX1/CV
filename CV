@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية</title>
+    <!-- إضافة Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* لون الخلفية الأساسي */
+            color: #333; /* لون النص الأساسي */
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 30px;
+            background-color: #fff; /* لون خلفية الحاوية */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px; /* زوايا الحاوية مستديرة */
+        }
+
+        header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header-title {
+            color: #007bff; /* لون العنوان الرئيسي */
+            animation: slide-in 2s ease-in-out;
+            font-size: 40px; /* حجم الخط للعناوين */
+            font-weight: bold; /* سماكة الخط للعناوين */
+            border-bottom: 3px solid #007bff; /* خط أسفل العنوان */
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            color: #6c757d; /* لون العناوين الثانوية */
+            margin-top: 20px;
+            font-size: 30px; /* حجم الخط للعناوين الثانوية */
+            font-weight: bold; /* سماكة الخط للعناوين الثانوية */
+            border-bottom: 2px solid #ddd; /* خط أسفل العناوين الثانوية */
+            padding-bottom: 10px;
+        }
+
+        .text-content {
+            color: #555; /* لون الفقرات */
+            font-size: 18px; /* حجم الخط للفقرات */
+            margin-bottom: 10px; /* مسافة بين الفقرات */
+        }
+
+        .animated-text {
+            animation: slide-in 2s ease-in-out;
+        }
+
+        button {
+            background-color: #28a745; /* لون الزر الأساسي */
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 5px; /* جعل الزر مستدير الزوايا */
+            font-size: 16px; /* زيادة حجم الخط */
+        }
+
+        button:hover {
+            background-color: #218838; /* لون الزر عند التحويم */
+        }
+
+        /* زر تفعيل الوضع الليلي */
+        .toggle-button {
+            background-color: #343a40; /* لون زر الوضع الليلي الأساسي */
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 5px; /* جعل الزر مستدير الزوايا */
+            font-size: 16px; /* زيادة حجم الخط */
+        }
+
+        .toggle-button:hover {
+            background-color: #495057; /* لون زر الوضع الليلي عند التحويم */
+        }
+
+        /* صورة متجاوبة */
+        .img-fluid {
+            max-width: 200px;
+            height: 200px;
+            border-radius: 50%; /* جعل الصورة دائرية */
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        /* نص متحرك */
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* الوضع الداكن */
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .dark-mode header, .dark-mode section {
+            background-color: #1e1e1e;
+        }
+
+        .dark-mode .header-title {
+            color: #bb86fc; /* لون العنوان الرئيسي في الوضع الداكن */
+        }
+
+        .dark-mode .section-title {
+            color: #a0a0a0; /* لون العناوين الثانوية في الوضع الداكن */
+        }
+
+        .dark-mode .text-content {
+            color: #e0e0e0; /* لون الفقرات في الوضع الداكن */
+        }
+
+        .dark-mode button {
+            background-color: #bb86fc;
+            color: #000;
+        }
+
+        .dark-mode button:hover {
+            background-color: #3700b3;
+        }
+
+        /* التنسيق المتجاوب */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header-title {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .text-content {
+                font-size: 16px;
+            }
+
+            .form-control {
+                font-size: 14px;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-title animated-header">السيرة الذاتية</div>
+            <button class="toggle-button" onclick="toggleDarkMode()">تفعيل/تعطيل الوضع الليلي</button>
+        </header>
+        <section>
+            <div class="text-center">
+                <img src="profile.jpg" alt="صورة شخصية" class="img-fluid">
+                <div class="section-title">معلومات شخصية</div>
+                <div class="text-content animated-text">الاسم: عبدالرحمن اللحيدان</div>
+                <div class="text-content">المهنة: مهندس شبكات</div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">التعليم</div>
+            <div class="text-content">بكالوريوس في هندسة الشبكات</div>
+        </section>
+        <section>
+            <div class="section-title">خبرات العمل</div>
+            <div class="text-content">مهندس شبكات في شركة STC</div>
+            <div class="text-content">برمجة بايثون</div>
+            <div class="text-content">برمجة HTML</div>
+            <div class="text-content">إدارة خوادم</div>
+            <div class="text-content">إيجاد وحل المشاكل</div>
+        </section>
+        <section>
+            <div class="section-title">التواصل</div>
+            <div class="text-content">الاسم: عبد الرحمن اللحيدان</div>
+            <div class="text-content">البريد الإلكتروني: d7mxgg@gmail.com</div>
+            <form>
+                <div class="form-group">
+                    <label for="message">الرسالة</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="أنا مهندس شبكات متمرس بخبرة تزيد عن خمس سنوات في تصميم وإدارة الشبكات. حاصل على درجة البكالوريوس في هندسة الشبكات من جامعة القصيم. لدي شغف كبير بالتكنولوجيا وحل المشكلات التقنية، وأبحث عن فرصة للانضمام إلى فريق عمل ديناميكي يمكنني من تطبيق مهاراتي والمساهمة في تحقيق أهداف الشركة.
+"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">إرسال</button>
+            </form>
+        </section>
+    </div>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
